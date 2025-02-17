@@ -15,8 +15,6 @@ function transformStateWithClones(state, actions) {
       newState = { ...newState, ...i.extraData };
     }
 
-    result.push(newState);
-
     if (i.type === 'removeProperties') {
       newState = { ...newState };
 
@@ -24,8 +22,6 @@ function transformStateWithClones(state, actions) {
         delete newState[key];
       }
     }
-
-    result.push(newState);
 
     if (i.type === 'clear') {
       newState = {};
